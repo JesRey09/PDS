@@ -99,7 +99,7 @@ def continuous_square():
     frequency = 2
     number_of_points = 1000  # Cantidad de puntos en el vector tiempo
     time = np.linspace(0, 2, number_of_points) # Vector de tiempo de 0 a 2 segundos
-    x_t = signal.square(2 * np.pi * frequency * time) # Pafa generar la señal cuadrada
+    x_t = signal.square(2 * np.pi * frequency * time) # Para generar la señal cuadrada
 
     continuous_plotter(
         time, x_t,
