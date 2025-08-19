@@ -1,11 +1,11 @@
 import numpy as np
-from src.utils.grapher import dac_plotter  # ← Nueva función que debes tener en grapher.py
+from src.utils.grapher import dac_plotter  # función 
 
 
 def analyze_dac_resolution(bits: int):
     # Parámetros del DAC
-    Vref = 5.0  # Voltaje de referencia
-    N = bits
+    Vref = 5.0  # Voltaje 
+    N = bits 
 
     # Cálculos
     niveles = 2**N
