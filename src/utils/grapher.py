@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-
+import numpy as np
 
 def continuous_plotter(
     ind_var, dep_var,
@@ -58,3 +58,31 @@ def dac_plotter(entradas_digitales, salida_analogica, bits):
     plt.legend(loc='upper right')
     plt.tight_layout()
     plt.show()
+
+def mi_DFT(x):
+    N = len(x) #cantidad de muestras
+    X = np.zeros( N, dtype=complex ) #Contenedores de frecuencia
+    #Fabricamos cada una de las componentes de la frecuencia
+    for m in range(N):
+        suma = 0.0
+        for n in range(N):
+            arg = (2*np.pi*m*n)/N
+            suma = suma + x[n]*( np.cos(arg) - 1j*np.sin(arg) )
+
+        X[m] = suma
+
+    return X
+        
+def mi_IDFT(x):
+    N = len(x) #cantidad de indices de frecuencia
+    X = np.zeros( N, dtype=complex ) #Contenedores de amplitudes
+    #Fabricamos cada una de las amplitudes de la señal
+    for n in range(N):
+        suma = 0.0
+        for m in range(N):
+            arg = (2*np.pi*m*n)/N
+            suma = suma + X[m]*( np.cos(arg) + 1j*np.sin(arg) )
+
+        x[n] = suma
+
+    return x/N
