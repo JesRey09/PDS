@@ -7,12 +7,13 @@ from src.Tarea1 import (
 )
 from src.Tarea2 import understanding_freq
 from src.Tarea3 import compare_sine_signals
-from src.Tarea4 import analyze_dac_resolution  # ← NUEVA IMPORTACIÓN
-
+from src.Tarea4 import analyze_dac_resolution 
+from src.Examen_p1 import exam_p1
+from src.Examen_p2 import exam_p2
 
 def main(options):
     if options[1].lower() == "tarea1":
-        if len(options) < 3:
+        if len(options) < 5:
             print("Qué señal quieres: seno, exponencial, triangular, cuadrada")
             return
 
@@ -48,12 +49,20 @@ def main(options):
         phi = float(options[4])
         compare_sine_signals(A, f, phi)
 
-    elif options[1].lower() == "tarea4":  # ← NUEVO BLOQUE
+    elif options[1].lower() == "tarea4":  
         if len(options) < 3:
             print("Falta el número de bits. Ejemplo: python main.py tarea4 8")
             return
         bits = int(options[2])
         analyze_dac_resolution(bits)
+
+    elif options[1].lower() == "examen_p1": 
+        exam_p1()
+        return 
+    
+    elif options[1].lower() == "examen_p2":  
+        exam_p2()
+        return 
 
     else:
         print("Tarea no reconocida. Usa: tarea1, tarea2, tarea3 o tarea4")
@@ -69,4 +78,4 @@ if __name__ == '__main__':
         print(" python main.py tarea1 seno")
         print(" python main.py tarea2 2")
         print(" python main.py tarea3 1 2 0.785")
-        print(" python main.py tarea4 8")  # ← AGREGADO EN LA AYUDA
+        print(" python main.py tarea4 8") 
