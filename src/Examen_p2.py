@@ -12,16 +12,12 @@ def mi_DFT(x):
         Xm[m] = suma
     return Xm
 
-# Parámetros
 fs = 256
 T = 6
 N = int(fs*T)
 n = np.arange(N)
 f1, f2 = 8, 20
 
-# ====================================================
-# CÓDIGO 1 - Señal limpia
-# ====================================================
 xn = np.sin(2*np.pi*f1*n/fs) + 0.5*np.sin(2*np.pi*f2*n/fs)
 Xm1 = mi_DFT(xn)
 
@@ -48,10 +44,6 @@ plt.xlabel("Frecuencia [Hz]")
 plt.ylabel("|X(f)|")
 plt.grid()
 
-
-# ====================================================
-# CÓDIGO 2 - Señal con ruido (10 Hz)
-# ====================================================
 ruido = 0.7*np.sin(2*np.pi*10*n/fs)
 xn_ruidosa = xn + ruido
 Xm2 = mi_DFT(xn_ruidosa)
