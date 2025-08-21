@@ -26,6 +26,7 @@ def exam_p1():
     delta_f = fs / N
     print(f"Resolución en frecuencia Δf = {delta_f} Hz")
 
+    
     print("Frecuencias de los picos:", peak_freqs)
     print("Amplitudes relativas:", peak_amps)
 

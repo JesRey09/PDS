@@ -45,3 +45,24 @@ python main.py
 python freq_explorer.py
 
 
+# Exámen: Análisis Espectral de Señales
+
+## Objetivo
+El objetivo es generar señales discretas y analizar su espectro en frecuencia utilizando Transformada Discreta de Fourier (DFT). 
+Esto permite identificar los componentes de frecuencia dominantes, estudiar la resolución espectral de la señal y analizar cómo el ruido afecta al espectro.
+
+## Dependencias
+Este proyecto utiliza las siguientes librerías de Python:
+- `numpy`
+- `matplotlib`
+
+Instalación recomendada:
+```bash
+pip install numpy matplotlib
+
+##como ejecutar 
+python Examen_P1.py  ## genera señal x(t) = (1 + 0.5 * cos(2π * 0.5 * t)) * sin(2π * 8 * t)
+python Examen_P2.py  ## genera señales con y sin ruido xn = sin(2π*8*n/fs) + 0.5*sin(2π*20*n/fs)
+
+
+
